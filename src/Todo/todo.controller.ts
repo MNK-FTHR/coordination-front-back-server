@@ -1,4 +1,4 @@
-import { TodoDto, AddTodoDto, EditTodoDto } from './dto';
+import { TodoDto } from './dto';
 import { TodoService } from './todo.service';
 import {
   Controller,
@@ -34,13 +34,13 @@ export class TodoController {
   @Put(':id')
   public edit(
     @Param('id') id: number,
-    @Body() todo: EditTodoDto,
+    @Body() todo: { title: string; text: string; completed: boolean },
   ): Promise<TodoDto> {
     return this.todoService.edit(id, todo);
   }
 
   @Post()
-  public add(@Body() todo: AddTodoDto): Promise<TodoDto> {
+  public add(@Body() todo: { title: string; text: string }): Promise<TodoDto> {
     return this.todoService.add(todo);
   }
 

@@ -19,6 +19,7 @@ export class Todo {
   public completed: boolean;
 
   public constructor(id: number, title: string, text: string) {
+    this.id = id;
     this.title = title;
     this.text = text;
     this.completed = false;

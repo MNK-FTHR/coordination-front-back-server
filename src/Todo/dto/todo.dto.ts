@@ -21,8 +21,4 @@ export class TodoDto {
     description: 'Etat de complétion du todo',
   })
   public readonly completed: boolean;
-
-  public constructor(opts?: Partial<TodoDto>) {
-    Object.assign(this, opts);
-  }
 }
